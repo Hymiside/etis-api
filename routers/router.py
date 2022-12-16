@@ -4,20 +4,12 @@ from fastapi.responses import JSONResponse
 
 from models import model
 from utils import service
-import configs.config
+from configs import config
 
-
-a = configs.config.init_config_pg()
 
 r = APIRouter()
-config = model.ConfigPG(
-        host="localhost",
-        port="5432",
-        user="postgres",
-        password="putinbest",
-        dbname="etis-api"
-    )
-s = service.Service(config)
+cfg = config.init_config_pg()
+s = service.Service(cfg)
 
 
 @r.post("/signup-tg")
