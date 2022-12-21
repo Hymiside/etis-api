@@ -4,12 +4,12 @@ from models import model
 
 
 def init_config_pg() -> model.ConfigPG:
-    env = dotenv_values(".env")
+    env_values = dotenv_values(".env")
     config = model.ConfigPG(
-        host=env["HOST"],
-        port=env["PORT"],
-        user=env["USER"],
-        password=env["PASSWORD"],
-        dbname=env["DBNAME"]
+        host=env_values["HOST"],
+        port=env_values["PORT"],
+        user=env_values["USER"],
+        password=env_values["PASSWORD"],
+        dbname=env_values["DBNAME"]
     )
     return config

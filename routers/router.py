@@ -14,8 +14,8 @@ s = service.Service(cfg)
 
 @r.post("/signup-tg")
 async def signup_tg(req: model.UserTG):
-    user_tg = jsonable_encoder(req)
-    return JSONResponse(user_tg)
+    res, status_code = s.signup_tg(req)
+    return JSONResponse(res, status_code=status_code)
 
 
 @r.on_event("shutdown")

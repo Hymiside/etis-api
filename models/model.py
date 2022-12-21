@@ -11,6 +11,7 @@ class UserETIS(BaseModel):
     tg_user_id: int
     email: EmailStr
     password: str
+    secret_key: str | None
 
 
 class ConfigPG(BaseModel):

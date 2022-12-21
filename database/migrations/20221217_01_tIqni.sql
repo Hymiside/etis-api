@@ -2,7 +2,7 @@
 -- depends: 
 create table "users"(
 	id serial primary key,
-	tg_user_id integer,
+	tg_user_id integer unique,
 	username text,
 	fullname text
 );
